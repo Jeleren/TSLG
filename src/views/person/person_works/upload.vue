@@ -132,7 +132,7 @@
           new_item.name=item.name;
           new_item.pre_file.src='http://118.24.96.186'+item.image;
           this.$store.commit('SET_EDIT_ITEM',new_item);
-          this.$router.push('/tslg/doUpload')
+          this.$router.push('/doUpload')
         }
       }
 

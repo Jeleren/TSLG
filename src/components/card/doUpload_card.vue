@@ -12,7 +12,7 @@
         name: "upload_card",
         methods:{
           showUpLoad(){
-            this.$router.push('/tslg/doUpload')
+            this.$router.push('doUpload')
           },
         }
     }

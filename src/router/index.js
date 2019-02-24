@@ -9,10 +9,10 @@ const router=new Router({
   mode:'history',
   routes: [
     {
-      path: '/tslg',
+      path: '/',
       name:'tslg',
       component:()=>import('../views/tslg'),
-      redirect:'/tslg/main',
+      redirect:'main',
       children:[
         {
           path:'login',
@@ -44,7 +44,7 @@ const router=new Router({
         {
           path:'person',
           name:'person',
-          redirect:'/tslg/person/person_center',
+          redirect:'person/person_center',
           component:()=>import('../views/person/Lgts_person'),
           children:[
             {
@@ -86,7 +86,7 @@ const router=new Router({
             {
               path:'person_works',
               component:()=>import('../views/person/person_works/index'),
-              redirect:'/tslg/person/person_works/upload',
+              redirect:'person_works/upload',
               children:[
                 {
                   path:'upload',
@@ -103,7 +103,7 @@ const router=new Router({
             ]
         },
         {
-          path:'/tslg/other_user/:Id',
+          path:'other_user/:Id',
           name:'other_user',
           component:()=>import('../views/person/other_user/other_user'),
         },

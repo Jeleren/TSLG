@@ -54,7 +54,7 @@ export function setDownload(item){
 }
 export function getInOtherUser(id){
   if(id===store.state.user.userInfo.id)
-    router.push('/tslg/person')
+    router.push('person')
   else{
     store.commit('SET_OTHER_NEXT_PAGE',`user=${id}&page=1`)
     store.commit('SET_OTHER_IMAGES_ENPTY')
@@ -64,7 +64,7 @@ export function getInOtherUser(id){
 export function goLogin() {
   store.commit('SET_CUR_ROUTER',router.currentRoute.fullPath);
   store.commit('SET_DO_LOGIN',true);
-  router.push('/tslg/login')
+  router.push('login')
 }
 export function goRegister() {
   store.commit('SET_DO_LOGIN',false);
@@ -76,7 +76,7 @@ export function checkLogin() {
     return true
   else{
     store.commit('SET_CUR_ROUTER',router.currentRoute.fullPath)
-    router.push('/tslg/login')
+    router.push('login')
   }
 }
 export function showCollect(id) {

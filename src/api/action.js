@@ -1,5 +1,5 @@
 import axios from '../utils/axios'
-let api='/api'
+let api=''
 export function ApiSetLike(data) {
   return axios.post(`${api}/like/`,data)
 }

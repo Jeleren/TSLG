@@ -1,6 +1,6 @@
 import axios from '../utils/axios'
 
-let api='/api'
+let api=''
 export function getImage(data) {
   return axios.get(`${api}/images/?${data}`)
 }

@@ -173,7 +173,7 @@
                   this.hint_check='登录跳转中';
                     this.$router.push(route)
                     //this.$store.commit('SET_CUR_ROUTER','')
-                  }else this.$router.push('/tslg/main');
+                  }else this.$router.push('main');
                 this.$store.dispatch('GetUserInfo');
                   if(this.$refs.check_rmb.checked)
                     this.doRememberPassword()

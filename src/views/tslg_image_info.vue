@@ -202,7 +202,7 @@
         },
         goCates(item,index){
           const {href}=this.$router.resolve({
-            path:'/tslg/cates',
+            path:'cates',
             query:{
               cate:item,
               index:index

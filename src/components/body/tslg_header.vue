@@ -101,9 +101,9 @@
           is_login:false,
           show_option:false,
           nav_lists:[
-            {title:'首页',route:'/tslg/main'},
-            {title:'排行榜',route:'/tslg/ranking_list'},
-            {title:'签约摄影师',route:'/tslg/signed_list'}
+            {title:'首页',route:'/main'},
+            {title:'排行榜',route:'/ranking_list'},
+            {title:'签约摄影师',route:'/signed_list'}
           ],
           search_content:'',
           set_top:false,
@@ -136,7 +136,7 @@
     },
       methods:{
         getInPerson(){
-          this.$router.push('/tslg/person')
+          this.$router.push('/person')
         },
         showOptions(){
           this.show_option=true
@@ -156,7 +156,7 @@
           goLogin()
         },
         goMain(){
-          this.$router.push('/tslg/main')
+          this.$router.push('/main')
         },
         goRegister(){
           goRegister()

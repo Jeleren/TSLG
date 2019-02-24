@@ -2,8 +2,8 @@
 <div class="person">
   <Lgts_head/>
   <div class="person-top-nav">
-    <router-link class="nav-item" to="/tslg/person/person_center">个人主页</router-link>
-    <router-link class="nav-item" to="/tslg/person/person_works">作品管理</router-link>
+    <router-link class="nav-item" to="/person/person_center">个人主页</router-link>
+    <router-link class="nav-item" to="/person/person_works">作品管理</router-link>
   </div>
   <router-view/>
   <tslg_footer/>
