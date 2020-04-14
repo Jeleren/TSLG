@@ -1,6 +1,6 @@
 <template>
 <div class="person">
-  <Lgts_head/>
+  <tslg_head/>
   <div class="person-top-nav">
     <router-link class="nav-item" to="/person/person_center">个人主页</router-link>
     <router-link class="nav-item" to="/person/person_works">作品管理</router-link>
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-  import Lgts_head from '../../components/body/tslg_header'
+  import tslg_head from '../../components/body/tslg_header'
   import tslg_footer from '../../components/body/tslg_footer'
   import cookie from '../../utils/cookie'
     export default {
-        name: "lgts_person",
+        name: "tslg_person",
       components:{
-        Lgts_head,
+        tslg_head,
         tslg_footer,
       },
       created(){

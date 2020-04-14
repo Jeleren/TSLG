@@ -1,6 +1,6 @@
 import axios from '../utils/axios'
 
-let api=''
+let api='api'
 export function getImage(data) {
   return axios.get(`${api}/images/?${data}`)
 }
@@ -59,7 +59,7 @@ export function getTitle() {
   return axios.get(`${api}/group/`)
 }
 export function getMainImage(data) {
-  return axios.get(`${api}/${data}&num=4`)
+  return axios.get(`${api}/${data}`)
 }
 
 export function getFans() {

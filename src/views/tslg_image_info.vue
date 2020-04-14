@@ -80,7 +80,7 @@
   import cookie from "../utils/cookie";
   import {getAllTitle} from "../api/get";
     export default {
-        name: "lgts_image_info",
+        name: "tslg_image_info",
       components:{
           tslg_head,
         tslg_footer,

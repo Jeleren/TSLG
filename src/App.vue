@@ -11,11 +11,11 @@ export default {
   mounted(){
     let client_width=document.documentElement.clientWidth*16/1920;
     let font_size=client_width+'px';
-    console.log(document.documentElement.clientWidth)
+    // console.log(document.documentElement.clientWidth)
     let scroll_width=this.getScrollWidth()
     let item_width=((document.documentElement.clientWidth-scroll_width)/client_width-21)/4
    // document.getElementsByTagName('html')[0].style.fontSize=font_size;
-    console.log(font_size)
+   //  console.log(font_size)
   },
   methods:{
      getScrollWidth() {

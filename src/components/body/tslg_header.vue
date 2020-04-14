@@ -92,7 +92,7 @@
   import cookie from '../../utils/cookie'
   import {getAllTitle} from "../../api/get";
   export default {
-      name: "Lgts_head",
+      name: "tslg_head",
       components:{
           editProfile
       },

@@ -24,7 +24,7 @@ const router=new Router({
           path:'main',
           name:'main',
           meta:{search:true},
-          component:()=>import('../views/Lgts_main'),
+          component:()=>import('../views/tslg_main'),
         },
         {
           path:'image/:id',
@@ -45,7 +45,7 @@ const router=new Router({
           path:'person',
           name:'person',
           redirect:'person/person_center',
-          component:()=>import('../views/person/Lgts_person'),
+          component:()=>import('../views/person/tslg_person'),
           children:[
             {
               path:'person_center',

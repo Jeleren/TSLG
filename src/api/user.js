@@ -1,20 +1,20 @@
 import axios from '../utils/axios'
 
-let api=''
+let api='api'
 export function login(data) {
-  return axios.post(`${api}/users/login`, data)//*
+  return axios.post(`${api}/user/login`, data)//*
 }
 export function register(data) {
-  return axios.post(`${api}/users/`, data)
+  return axios.post(`${api}/user/`, data)
 }
 export function editProfile(data) {
-  return axios.put(`${api}/users/`,data)
+  return axios.put(`${api}/user/`,data)
 }
 export function upload(data) {
   return axios.post(`${api}/images/`, data)
 }
 export function getUserInfo(user_id) {
-  return axios.get(`${api}/users/${user_id}/`)
+  return axios.get(`${api}/user/${user_id}/`)
 }
 export function addImage(data) {
   return axios.post(`${api}/collect/`,data)
@@ -29,7 +29,7 @@ export function forgetPassword(data) {
   return axios.post(`${api}/forget/`,data)
 }
 export function changeUserInfo(id,data) {
-  return axios.put(`${api}/users/${id}/`,data)
+  return axios.put(`${api}/user/${id}/`,data)
 }
 export function checkName(data) {
   return axios.get(`${api}/has_user/?username=${data}`)

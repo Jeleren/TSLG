@@ -104,7 +104,7 @@
   import yzm from '../components/yzm'
   import cookie from "../utils/cookie";
   export default {
-    name: "lgts_login",
+    name: "tslg_login",
     components: {
        yzm
     },

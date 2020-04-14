@@ -17,7 +17,7 @@
 <script>
 
   export default {
-        name: "Lgts_centerBg",
+        name: "tslg_centerBg",
       computed:{
           userInfo(){
             return this.$store.state.user.userInfo

@@ -1,6 +1,6 @@
 <template>
   <div class="signed-list">
-    <Lgts_head/>
+    <tslg_head/>
     <div class="ranking-list">
       <div class="p-card-wrap">
         <div class="p-card-item-wrap" v-if="list.length">
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-    import Lgts_head from '../../components/body/tslg_header'
+    import tslg_head from '../../components/body/tslg_header'
     import tslg_footer from '../../components/body/tslg_footer'
     import page_choice from '../../components/page_choice'
     import {setFollow,setUnFollow} from "../../api/action";
@@ -44,7 +44,7 @@
 
     export default {
         name: "cameraman",
-        components: {tslg_footer,Lgts_head,page_choice},
+        components: {tslg_footer,tslg_head,page_choice},
       data(){
         return {
           sw:true,

@@ -1,23 +1,24 @@
 <template>
     <div id="main-image">
-      <div v-for="(item,index) in nav_items" class="main-item-box" >
+      <div v-for="(item,index) in nav_items" :key="item.name" class="main-item-box" >
         <div class="title-wrap">
-           <a @click="goBCates(item.name,index)">{{item.name}}</a><a v-for="(item_title,title_index) in item.kids" @click="goSCates(item_title.name,index,title_index)">{{item_title.name}}</a>
+          <a @click="goBCates(item.name,index)">{{item.name}}</a>
+          <a v-show="item.kids" v-for="(item_title,title_index) in item.kids" :key="item_title.name" @click="goSCates(item_title.name,index,title_index)">{{item_title.name}}</a>
           <a class="more" @click="goBCates(item.name,index)">更多 ></a>
         </div>
       <!--<image_card :image_list="item.image"/>-->
-        <div class="main-image clear" >
+        <div class="main-image clear" v-if="item.image" >
           <div v-for="(item_image,image_index) in item.image" class="image-box image-item" >
             <div class="image-content" :style="{'background-image':`url(${item_image.image})`}">
               <div class="image-up" @click="showImageInfo(item_image.id)">
                 <div class="btn-warp clear">
                   <div class="collect-btn" :class="{'btn-active':item_image.if_collect}" @click.stop="showCollect(item_image)" title="收藏">
                     <img class="btn-img" :src="item_image.if_collect?collect:unCollect">
-                    <span class="btn-span">{{item_image.collection_nums}}</span>
+                    <span class="btn-span">{{item_image.collect_num < 10000 ? item_image.collect_num : '9999+'}}</span>
                   </div>
                   <div class="like-btn" :class="{'btn-active':item_image.if_like}" @click.stop="setLike(item_image)" title="点赞">
                     <img class="btn-img"  :src="item_image.if_like?like:unlike">
-                    <span class="btn-span">{{item_image.like_nums}}</span>
+                    <span class="btn-span">{{item_image.like_num < 10000 ? item_image.like_num : '9999+'}}</span>
                   </div>
                 </div>
                 <a  class="download-warp"  @click.stop="setDownload(item_image)" :download="item_image.name" title="点击下载">
@@ -29,7 +30,7 @@
             <div class="photo-info">
               <div class="works">
                 <div class="works-name">{{item_image.name}}</div>
-                <div class="works-type">{{setCates(item_image.cates)}}</div>
+                <div class="works-type">{{setCates(item_image.cate)}}</div>
               </div>
               <div class="author">
                 <i class="user-image" :style="{'background-image':`url(${item_image.user.image})`}" @click="getInOtherUser(item_image.user.id)" @mouseenter="showPersonCard(index*10+image_index)" @mouseleave="showPersonCard" :title="'进入'+item_image.user.username+'的主页'"></i>
@@ -44,11 +45,11 @@
               <div class="products-and-fans">
                 <div class="nums-info author-products">
                   <span class="nums-info-title">作品</span>
-                  <span class="author-nums">{{item_image.user.upload_nums}}</span>
+                  <span class="author-nums">{{item_image.user.upload_num}}</span>
                 </div>
                 <div class="nums-info author-fans">
                   <span class="nums-info-title">粉丝</span>
-                  <span class="author-nums">{{item_image.user.fan_nums}}</span>
+                  <span class="author-nums">{{item_image.user.fan_num}}</span>
                 </div>
               </div>
             </div>
@@ -70,12 +71,11 @@
         name: "main_image",
       components:{
           image_card,
-        collect
+          collect
       },
       data(){
           return {
             nav_items:[],
-            image_items:[],
             like:require('../assets/image_like.png'),
             unlike:require('../assets/image_unlike.png'),
             collect:require('../assets/image_collect.png'),
@@ -84,16 +84,16 @@
           }
       },
       created(){
-        let array=this.nav_items;
-        getTitle().then((res)=>{
-          array=res.data;
-          for(let i=0;i<res.data.length;i++){
-            array[i].image=[]
-            getMainImage(`group/${array[i].id}/?page=1&num=4`).then((res)=>{
-              array[i].image=res.data.results
+        let array = this.nav_items
+        getTitle().then((res) => {
+          array = res.data
+          for (let i = 0; i < array.length; i++) {
+            array[i].image = []
+            getMainImage(`group/${array[i].id}/?page=1&num=4`).then((res) => {
+              this.$set(array[i], 'image', res.data)
             })
           }
-          this.nav_items=array
+          this.nav_items = array
           // store.commit('SET_TITLE',array)
         })
       },
@@ -165,14 +165,14 @@
           })
           window.open(href,'_blank')
         },
-        setCates(cates){
-          let array=cates.split("、"),l_cate=[];
+        setCates(cate){
+          let array=cate.split("、"),l_cate=[];
           for(let i=0;i<array.length;i++){
             let temp=array[i].split("/");
             l_cate.push(temp[temp.length-1])
           }
-          cates=l_cate.join(" ");
-          return cates
+          cate = l_cate.join(" ");
+          return cate
         }
       }
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="other-user">
-    <lgts_head/>
+    <tslg_head/>
     <div class="userInfo" v-if="userInfo">
       <div class="pic-box"></div>
       <div  class="user-box">
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-  import Lgts_head from '../../../components/body/tslg_header'
+  import tslg_head from '../../../components/body/tslg_header'
   import tslg_footer from '../../../components/body/tslg_footer'
   import {setFollow, setUnFollow} from "../../../api/action";
   import {setImageInfo} from "../../../utils/user";
@@ -67,7 +67,7 @@
   export default {
         name: "other_user",
     components:{
-      Lgts_head,
+      tslg_head,
       tslg_footer
     },
     data(){

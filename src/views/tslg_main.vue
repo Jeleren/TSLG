@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <Lgts_head/>
-    <Lgts_lunbo/>
+    <tslg_head/>
+    <tslg_lunbo/>
     <main_image/>
     <tslg_footer/>
     <router-view/>
@@ -9,20 +9,18 @@
 </template>
 
 <script>
-  import Lgts_head from '../components/body/tslg_header'
-  import Lgts_lunbo from './Lgts_lunbo'
+  import tslg_head from '../components/body/tslg_header'
+  import tslg_lunbo from './tslg_lunbo'
   import tslg_footer from '../components/body/tslg_footer'
   import main_image from '../views/main_image'
-  import animation from '../components/animation'
     export default {
       components: {
-        Lgts_lunbo,
-        Lgts_head,
+        tslg_lunbo,
+        tslg_head,
         tslg_footer,
         main_image,
-        animation
       },
-      name: "Lgts_main",
+      name: "tslg_main",
     }
 </script>
 

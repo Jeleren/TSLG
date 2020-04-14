@@ -21,7 +21,7 @@
 <script>
   import {getBanner} from "../api/get";
     export default {
-        name: "Lgts_lunbo",
+        name: "tslg_lunbo",
       data:function () {
         return{
           nowIndex:0,
